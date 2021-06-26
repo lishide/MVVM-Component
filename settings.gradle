@@ -1,2 +1,2 @@
+rootProject.name = "MVVM-Component"
 include ':app'
-rootProject.name = "MVVM"
