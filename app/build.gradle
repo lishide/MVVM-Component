@@ -55,4 +55,5 @@ dependencies {
     implementation rootProject.ext.dependencies["smart_refresh_layout"]
     implementation rootProject.ext.dependencies["smart_refresh_header"]
     implementation rootProject.ext.dependencies["eventbus"]
+    implementation rootProject.ext.dependencies["anko"]
 }

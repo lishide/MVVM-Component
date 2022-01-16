@@ -4,13 +4,16 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
-import android.os.Handler
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.byl.mvvm.databinding.ActivitySplashBinding
+import com.byl.mvvm.ui.main.MainActivity
 import com.lishide.mvvm.ui.base.BaseActivity
 import com.lishide.mvvm.ui.base.BaseViewModel
-import com.byl.mvvm.ui.main.MainActivity
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import org.jetbrains.anko.startActivity
 
 
 class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, ActivitySplashBinding>() {
@@ -39,10 +42,12 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
     }
 
     private fun init() {
-        Handler().postDelayed({
-            startActivity(Intent(mContext, MainActivity::class.java))
-            finish()
-        }, 2000)
+        GlobalScope.launch {
+            delay(START_DELAY_MILLIS)
+
+            startActivity<MainActivity>()
+            close()
+        }
     }
 
     override fun initClick() {
@@ -79,6 +84,10 @@ class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, Activi
             ) == PackageManager.PERMISSION_GRANTED
         else
             true
+    }
+
+    companion object {
+        const val START_DELAY_MILLIS = 2 * 1000L
     }
 
 }
