@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.lishide.mvvm.api.error.ErrorResult
-import com.lishide.mvvm.event.Event
+import com.lishide.mvvm.event.EventBusManager
 import com.lishide.mvvm.event.EventMessage
 import com.lishide.mvvm.ext.toast
 import com.lishide.mvvm.ui.dialog.LoadingDialog
@@ -78,7 +78,7 @@ abstract class BaseFragment<VM : BaseViewModel<VB>, VB : ViewBinding> : Fragment
     }
 
     private fun init() {
-        Event.register(this)
+        EventBusManager.register(this)
         // loading
         vm.isShowLoading.observe(this, {
             if (it) showLoading() else dismissLoading()
@@ -92,7 +92,7 @@ abstract class BaseFragment<VM : BaseViewModel<VB>, VB : ViewBinding> : Fragment
 
     override fun onDestroy() {
         super.onDestroy()
-        Event.unregister(this)
+        EventBusManager.unregister(this)
     }
 
     /**
