@@ -1,6 +1,6 @@
 package com.byl.mvvm.api
 
-import com.byl.mvvm.api.response.BaseResult
+import com.lishide.mvvm.api.response.BaseResult
 import com.byl.mvvm.ui.common.model.TestModel
 import com.byl.mvvm.ui.main.model.ArticleListBean
 import retrofit2.http.GET

@@ -1,7 +1,7 @@
 package com.byl.mvvm
 
 import android.app.Application
-import com.byl.mvvm.util.Logg
+import com.lishide.mvvm.util.Logg
 import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout

@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.byl.mvvm.databinding.FragmentMainBinding
-import com.byl.mvvm.ui.base.BaseFragment
+import com.lishide.mvvm.ui.base.BaseFragment
 import com.byl.mvvm.ui.main.adapter.ArticleListAdapter
 import com.byl.mvvm.ui.main.model.ArticleBean
 import com.byl.mvvm.ui.main.vm.MainFragmentViewModel

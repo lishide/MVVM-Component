@@ -3,8 +3,8 @@ package com.byl.mvvm.api.retrofit
 import com.byl.mvvm.App
 import com.byl.mvvm.BuildConfig
 import com.byl.mvvm.api.URLConstant
-import com.byl.mvvm.util.JsonUtils
-import com.byl.mvvm.util.Logg
+import com.lishide.mvvm.util.JsonUtils
+import com.lishide.mvvm.util.Logg
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor

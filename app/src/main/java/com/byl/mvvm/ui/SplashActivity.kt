@@ -8,8 +8,8 @@ import android.os.Handler
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.byl.mvvm.databinding.ActivitySplashBinding
-import com.byl.mvvm.ui.base.BaseActivity
-import com.byl.mvvm.ui.base.BaseViewModel
+import com.lishide.mvvm.ui.base.BaseActivity
+import com.lishide.mvvm.ui.base.BaseViewModel
 import com.byl.mvvm.ui.main.MainActivity
 
 

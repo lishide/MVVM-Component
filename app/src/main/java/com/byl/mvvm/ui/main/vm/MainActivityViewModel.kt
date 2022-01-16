@@ -4,13 +4,15 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
+import com.byl.mvvm.api.HttpUtil
 import com.byl.mvvm.databinding.ActivityMainBinding
-import com.byl.mvvm.ui.base.BaseViewModel
+import com.lishide.mvvm.ui.base.BaseViewModel
 import com.byl.mvvm.ui.main.MainActivity
 import com.byl.mvvm.ui.main.model.ArticleListBean
 
 class MainActivityViewModel : BaseViewModel<ActivityMainBinding>() {
 
+    val httpUtil by lazy { HttpUtil.getInstance().getService() }
     var articlesData = MutableLiveData<ArticleListBean>()
 
     fun getArticleList(page: Int, isShowLoading: Boolean = false) {

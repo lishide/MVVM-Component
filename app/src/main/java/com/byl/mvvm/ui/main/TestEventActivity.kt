@@ -2,13 +2,13 @@ package com.byl.mvvm.ui.main
 
 import androidx.fragment.app.Fragment
 import com.byl.mvvm.databinding.ActivityTestEventBinding
-import com.byl.mvvm.event.Event
-import com.byl.mvvm.event.EventCode
-import com.byl.mvvm.event.EventMessage
-import com.byl.mvvm.ui.base.BaseActivity
-import com.byl.mvvm.ui.base.BaseViewModel
+import com.lishide.mvvm.event.Event
+import com.lishide.mvvm.event.EventCode
+import com.lishide.mvvm.event.EventMessage
+import com.lishide.mvvm.ui.base.BaseActivity
+import com.lishide.mvvm.ui.base.BaseViewModel
 import com.byl.mvvm.ui.main.adapter.FragmentPageAdapter
-import com.byl.mvvm.widget.clicks
+import com.lishide.mvvm.widget.clicks
 import java.util.*
 
 

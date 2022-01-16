@@ -1,2 +1,3 @@
 rootProject.name = "MVVM-Component"
+include ':AF-MVVM'
 include ':app'
