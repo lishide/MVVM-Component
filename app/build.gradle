@@ -4,14 +4,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
 
     defaultConfig {
         applicationId "com.byl.mvvm"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode Integer.valueOf(project.versionCode)
+        versionName project.versionName
         flavorDimensions versionName
     }
 
@@ -44,17 +45,14 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     api project(path: ':AF-MVVM')
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    //glide图片加载框架
-    final GLIDE_VERSION = '4.12.0'
-    implementation "com.github.bumptech.glide:glide:$GLIDE_VERSION"
-    implementation "com.github.bumptech.glide:okhttp3-integration:$GLIDE_VERSION"
-    //网络请求cookie缓存
-    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
-    //PhotoView
-    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
-    //刷新框架
-    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
-    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'
+    implementation rootProject.ext.dependencies["glide"]
+    implementation(rootProject.ext.dependencies["glide-loader-okhttp3"]) {
+        exclude module: 'annotation'
+        exclude module: 'fragment'
+        exclude module: 'okhttp'
+    }
+    implementation rootProject.ext.dependencies["PersistentCookieJar"]
+    implementation rootProject.ext.dependencies["smart_refresh_layout"]
+    implementation rootProject.ext.dependencies["smart_refresh_header"]
+    implementation rootProject.ext.dependencies["eventbus"]
 }

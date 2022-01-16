@@ -1,0 +1,124 @@
+ext {
+
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.3",
+            minSdkVersion    : 19,
+            targetSdkVersion : 30,
+            defultDimensions : "vDimension",
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+    version = [
+            androidx_version        : "1.2.0",
+            androidx_lifecycle      : "2.3.1",
+            anko_version            : "0.10.8",
+            retrofitSdkVersion      : "2.9.0",
+            glideSdkVersion         : "4.12.0",
+            glideTransVersion       : "4.1.0",
+            smartRefresh            : "2.0.1",
+            espressoSdkVersion      : "3.3.0",
+            canarySdkVersion        : "2.5",
+            stetho_version          : "1.5.1"
+    ]
+
+    dependencies = [
+            // androidx
+            "appcompat"                  : "androidx.appcompat:appcompat:${version["androidx_version"]}",
+            "material"                   : "com.google.android.material:material:${version["androidx_version"]}",
+            "annotations"                : "androidx.annotation:annotation:${version["androidx_version"]}",
+            "recyclerview"               : "androidx.recyclerview:recyclerview:${version["androidx_version"]}",
+            "recyclerviewx-selection"    : "androidx.recyclerview:recyclerview-selection:1.0.0",
+            "coordinatorlayout"          : "androidx.coordinatorlayout:coordinatorlayout:${version["androidx_version"]}",
+            "support-v4"                 : "androidx.legacy:legacy-support-v4:1.0.0",
+            "cardview"                   : "androidx.cardview:cardview:1.0.0",
+            "constraintlayout"           : "androidx.constraintlayout:constraintlayout:2.0.4",
+            "anko"                       : "org.jetbrains.anko:anko-commons:${version["anko_version"]}",
+            "androidx-core-ktx"          : "androidx.core:core-ktx:1.3.2",
+            "lifecycle-livedata"         : "androidx.lifecycle:lifecycle-livedata-ktx:${version["androidx_lifecycle"]}",
+            "lifecycle-viewmodel"        : "androidx.lifecycle:lifecycle-viewmodel-ktx:${version["androidx_lifecycle"]}",
+            "kotlin-stdlib"              : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+
+            // network
+            "retrofit"                   : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
+            "retrofit-converter-gson"    : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava2"   : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitSdkVersion"]}",
+            "okhttp3"                    : "com.squareup.okhttp3:okhttp:3.12.3",
+            "okhttp3-logging-interceptor": "com.squareup.okhttp3:logging-interceptor:3.12.3",
+            "okhttp-urlconnection"       : "com.squareup.okhttp:okhttp-urlconnection:2.0.0",
+            "glide"                      : "com.github.bumptech.glide:glide:${version["glideSdkVersion"]}",
+            "glide-compiler"             : "com.github.bumptech.glide:compiler:${version["glideSdkVersion"]}",
+            "glide-loader-okhttp3"       : "com.github.bumptech.glide:okhttp3-integration:${version["glideSdkVersion"]}",
+            "glide-transformations"      : "jp.wasabeef:glide-transformations:${version["glideTransVersion"]}",
+            "glide-webpdecoder"          : "com.zlc.glide:webpdecoder:1.6.${version["glideSdkVersion"]}",
+            // 网络请求 cookie 缓存
+            "PersistentCookieJar"        : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
+
+            // view
+            "pickerview"                 : "com.contrarywind:Android-PickerView:4.1.6",
+            "photoview"                  : "com.github.chrisbanes.photoview:library:1.2.3",
+            "numberprogressbar"          : "com.daimajia.numberprogressbar:library:1.2@aar",
+            "avi_loading"                : "com.wang.avi:library:2.1.3",
+            "base_rv_adapter"            : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46",
+            "rv_divider"                 : "com.choices.divider:RecyclerView_Divider:1.0.0",
+//            "index_recycleview"          : "me.yokeyword:indexablerecyclerview:1.3.0",
+//            "tinypinyin"                 : "com.github.promeg:tinypinyin:2.0.3",
+            "smart_refresh_layout"         : "com.scwang.smart:refresh-layout-kernel:${version["smartRefresh"]}",
+            "smart_refresh_header"         : "com.scwang.smart:refresh-header-classics:${version["smartRefresh"]}",
+            "circleimageview"            : "de.hdodenhof:circleimageview:3.1.0",
+            "flexbox"                    : "com.google.android:flexbox:1.0.0",
+            "flycotablayout"             : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+            "flowlayout"                 : "com.hyman:flowlayout-lib:1.1.2",
+            "easypopup"                  : "com.github.zyyoona7:EasyPopup:1.1.2",
+            "wheelPicker"                : "com.github.gzu-liyujiang.AndroidPicker:WheelPicker:1.5.6",
+            "youth_banner"               : "com.youth.banner:banner:1.4.10",
+            "switchbutton"               : "com.kyleduo.switchbutton:library:2.0.0",
+            "magicasakura"               : "com.bilibili:magicasakura:0.1.9-beta3@aar",
+            "jsbridge"                   : "com.github.lzyzsd:jsbridge:1.0.4",
+            "gsyvideoplayer"             : "com.shuyu:GSYVideoPlayer:6.0.3",
+            "audioRecordWave"            : "com.github.CarGuo:GSYRecordWave:2.0.1",
+            "hh_tv_trtc"                 : "com.hhmedic.android.sdk:hh_trtc:3.0.8.01061149",
+
+            "eventbus"                   : "org.greenrobot:eventbus:3.2.0",
+            "androideventbus"            : "org.simple:androideventbus:1.0.5.1",
+            "otto"                       : "com.squareup:otto:1.3.8",
+            "gson"                       : "com.google.code.gson:gson:2.8.6",
+            "fastjson"                   : "com.alibaba:fastjson:1.2.61",
+            "mmkv"                       : "com.tencent:mmkv-static:1.2.1",
+            "multidex"                   : "androidx.multidex:multidex:2.0.1",
+            "javax.annotation"           : "javax.annotation:jsr250-api:1.0",
+            "arouter"                    : "com.alibaba:arouter-api:1.5.0",
+            "arouter-compiler"           : "com.alibaba:arouter-compiler:1.2.2",
+            "progressmanager"            : "me.jessyan:progressmanager:1.5.0",
+            "retrofit-url-manager"       : "me.jessyan:retrofit-url-manager:1.4.0",
+            "stetho"                     : "com.facebook.stetho:stetho:${version["stetho_version"]}",
+            "stetho-okhttp3"             : "com.facebook.stetho:stetho-okhttp3:${version["stetho_version"]}",
+            "autosize"                   : "me.jessyan:autosize:1.2.1",
+            "customactivityoncrash"      : "cat.ereza:customactivityoncrash:2.3.0",
+            "zxing"                      : "cn.yipianfengye.android:zxing-library:2.2",
+            "app-updater"                : "com.king.app:app-updater:1.0.8-androidx",
+            "app-dialog"                 : "com.king.app:app-dialog:1.0.8-androidx",
+            "stream"                     : "com.annimon:stream:1.2.1",
+            "AndPermission"              : "com.yanzhenjie:permission:2.0.3",
+
+            // test
+            "junit"                      : "junit:junit:4.13.1",
+            "androidx-junit"             : "androidx.test.ext:junit:1.1.2",
+            "androidJUnitRunner"         : "androidx.test.runner.AndroidJUnitRunner",
+            "runner"                     : "androidx.test:runner:1.3.0",
+            "espresso-core"              : "androidx.test.espresso:espresso-core:${version["espressoSdkVersion"]}",
+            "espresso-contrib"           : "androidx.test.espresso:espresso-contrib:${version["espressoSdkVersion"]}",
+            "espresso-intents"           : "androidx.test.espresso:espresso-intents:${version["espressoSdkVersion"]}",
+            "mockito-core"               : "org.mockito:mockito-core:1.+",
+            "timber"                     : "com.jakewharton.timber:timber:4.7.1",
+            "logger"                     : "com.orhanobut:logger:2.2.0",
+            "canary-debug"               : "com.squareup.leakcanary:leakcanary-android:${version["canarySdkVersion"]}",
+            "umeng-common"               : "com.umeng.umsdk:common:2.0.0",
+            "umeng-analytics"            : "com.umeng.umsdk:analytics:8.0.0",
+//            "tracker"                    : "org.matomo.sdk:tracker:4.1.0",
+            "channelVasDolly"            : "com.leon.channel:helper:2.0.3",
+    ]
+
+
+}
