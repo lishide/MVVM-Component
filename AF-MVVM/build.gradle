@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    api rootProject.ext.dependencies["kotlin-stdlib"]
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     api rootProject.ext.dependencies["androidx-core-ktx"]
     api rootProject.ext.dependencies["appcompat"]
     api rootProject.ext.dependencies["recyclerview"]

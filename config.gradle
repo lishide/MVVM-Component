@@ -11,16 +11,16 @@ ext {
     ]
 
     version = [
-            androidx_version        : "1.2.0",
-            androidx_lifecycle      : "2.3.1",
-            anko_version            : "0.10.8",
-            retrofitSdkVersion      : "2.9.0",
-            glideSdkVersion         : "4.12.0",
-            glideTransVersion       : "4.1.0",
-            smartRefresh            : "2.0.1",
-            espressoSdkVersion      : "3.3.0",
-            canarySdkVersion        : "2.5",
-            stetho_version          : "1.5.1"
+            androidx_version  : "1.2.0",
+            androidx_lifecycle: "2.3.1",
+            anko_version      : "0.10.8",
+            retrofitSdkVersion: "2.9.0",
+            glideSdkVersion   : "4.12.0",
+            glideTransVersion : "4.1.0",
+            smartRefresh      : "2.0.1",
+            espressoSdkVersion: "3.3.0",
+            canarySdkVersion  : "2.5",
+            stetho_version    : "1.5.1"
     ]
 
     dependencies = [
@@ -38,7 +38,6 @@ ext {
             "androidx-core-ktx"          : "androidx.core:core-ktx:1.3.2",
             "lifecycle-livedata"         : "androidx.lifecycle:lifecycle-livedata-ktx:${version["androidx_lifecycle"]}",
             "lifecycle-viewmodel"        : "androidx.lifecycle:lifecycle-viewmodel-ktx:${version["androidx_lifecycle"]}",
-            "kotlin-stdlib"              : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
 
             // network
             "retrofit"                   : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
@@ -62,10 +61,8 @@ ext {
             "avi_loading"                : "com.wang.avi:library:2.1.3",
             "base_rv_adapter"            : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46",
             "rv_divider"                 : "com.choices.divider:RecyclerView_Divider:1.0.0",
-//            "index_recycleview"          : "me.yokeyword:indexablerecyclerview:1.3.0",
-//            "tinypinyin"                 : "com.github.promeg:tinypinyin:2.0.3",
-            "smart_refresh_layout"         : "com.scwang.smart:refresh-layout-kernel:${version["smartRefresh"]}",
-            "smart_refresh_header"         : "com.scwang.smart:refresh-header-classics:${version["smartRefresh"]}",
+            "smart_refresh_layout"       : "com.scwang.smart:refresh-layout-kernel:${version["smartRefresh"]}",
+            "smart_refresh_header"       : "com.scwang.smart:refresh-header-classics:${version["smartRefresh"]}",
             "circleimageview"            : "de.hdodenhof:circleimageview:3.1.0",
             "flexbox"                    : "com.google.android:flexbox:1.0.0",
             "flycotablayout"             : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
@@ -76,14 +73,14 @@ ext {
             "switchbutton"               : "com.kyleduo.switchbutton:library:2.0.0",
             "magicasakura"               : "com.bilibili:magicasakura:0.1.9-beta3@aar",
             "jsbridge"                   : "com.github.lzyzsd:jsbridge:1.0.4",
-            "gsyvideoplayer"             : "com.shuyu:GSYVideoPlayer:6.0.3",
+            "GSYVideoPlayer"             : "com.shuyu:GSYVideoPlayer:6.0.3",
             "audioRecordWave"            : "com.github.CarGuo:GSYRecordWave:2.0.1",
             "hh_tv_trtc"                 : "com.hhmedic.android.sdk:hh_trtc:3.0.8.01061149",
 
-            "eventbus"                   : "org.greenrobot:eventbus:3.2.0",
+            "eventbus"                   : "org.greenrobot:eventbus:3.3.1",
             "androideventbus"            : "org.simple:androideventbus:1.0.5.1",
             "otto"                       : "com.squareup:otto:1.3.8",
-            "gson"                       : "com.google.code.gson:gson:2.8.6",
+            "gson"                       : "com.google.code.gson:gson:2.8.9",
             "fastjson"                   : "com.alibaba:fastjson:1.2.61",
             "mmkv"                       : "com.tencent:mmkv-static:1.2.1",
             "multidex"                   : "androidx.multidex:multidex:2.0.1",
@@ -103,20 +100,18 @@ ext {
             "AndPermission"              : "com.yanzhenjie:permission:2.0.3",
 
             // test
-            "junit"                      : "junit:junit:4.13.1",
+            "junit"                      : "junit:junit:4.13.2",
             "androidx-junit"             : "androidx.test.ext:junit:1.1.2",
             "androidJUnitRunner"         : "androidx.test.runner.AndroidJUnitRunner",
             "runner"                     : "androidx.test:runner:1.3.0",
             "espresso-core"              : "androidx.test.espresso:espresso-core:${version["espressoSdkVersion"]}",
             "espresso-contrib"           : "androidx.test.espresso:espresso-contrib:${version["espressoSdkVersion"]}",
             "espresso-intents"           : "androidx.test.espresso:espresso-intents:${version["espressoSdkVersion"]}",
-            "mockito-core"               : "org.mockito:mockito-core:1.+",
             "timber"                     : "com.jakewharton.timber:timber:4.7.1",
             "logger"                     : "com.orhanobut:logger:2.2.0",
             "canary-debug"               : "com.squareup.leakcanary:leakcanary-android:${version["canarySdkVersion"]}",
             "umeng-common"               : "com.umeng.umsdk:common:2.0.0",
             "umeng-analytics"            : "com.umeng.umsdk:analytics:8.0.0",
-//            "tracker"                    : "org.matomo.sdk:tracker:4.1.0",
             "channelVasDolly"            : "com.leon.channel:helper:2.0.3",
     ]
 
