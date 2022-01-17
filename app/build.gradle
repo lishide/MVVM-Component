@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -17,6 +18,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            crunchPngs false // 关闭 crunchPng 优化, 以加快构建
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -24,11 +28,19 @@ android {
     }
 
     compileOptions {
+        incremental = true  // 开启增量编译
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    // 优化编译速度
+    // 优化 `transformClassDexBuilderForDebug` 的速度
+    dexOptions {
+        dexInProcess true
+        preDexLibraries true
+        maxProcessCount 8
     }
 
     buildFeatures {
@@ -39,6 +51,25 @@ android {
         main {
             jniLibs.srcDirs = ['libs']
         }
+    }
+
+    // 跳过 Lint 和 Test 相关的 task, 以加速编译
+    if (isDebug()) {
+        gradle.taskGraph.whenReady {
+            tasks.each { task ->
+                if (task.name.contains("Test") || task.name.contains("Lint")) {
+                    task.enabled = false
+                }
+            }
+        }
+    }
+}
+
+// 优化编译速度，如果有用到 kapt 添加如下配置
+kapt {
+    useBuildCache = true
+    javacOptions {
+        option("-Xmaxerrs", 500)
     }
 }
 

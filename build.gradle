@@ -30,3 +30,14 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+// 是否是执行 Debug 相关 task (通用函数, 可供子 module 调用)
+def isDebug() {
+    def taskNames = gradle.startParameter.taskNames
+    for (tn in taskNames) {
+        if ((tn.contains("install") || tn.contains("assemble")) && tn.contains("Debug")) {
+            return true
+        }
+    }
+    return false
+}

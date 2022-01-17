@@ -7,3 +7,5 @@
 /captures
 .externalNativeBuild
 .cxx
+buildCacheDir.lock
+buildCacheDir/
