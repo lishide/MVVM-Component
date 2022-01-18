@@ -2,6 +2,7 @@ package com.byl.mvvm.ui.base
 
 import androidx.viewbinding.ViewBinding
 import com.byl.mvvm.event.EventMessage
+import com.byl.mvvm.ui.dialog.LoadingDialog
 import com.lishide.mvvm.api.error.ErrorResult
 import com.lishide.mvvm.ui.base.BaseFragment
 import com.lishide.mvvm.ui.base.BaseViewModel
@@ -14,6 +15,16 @@ import org.greenrobot.eventbus.Subscribe
  * @date 2022/1/18
  */
 abstract class BaseAppFragment<VM : BaseViewModel<VB>, VB : ViewBinding> : BaseFragment<VM, VB>() {
+
+    private val mLoading: LoadingDialog by lazy { LoadingDialog(mContext) }
+
+    override fun showLoading() {
+        mLoading.showLoading()
+    }
+
+    override fun dismissLoading() {
+        mLoading.dismiss()
+    }
 
     /**
      * 事件传递

@@ -11,7 +11,6 @@ import androidx.viewbinding.ViewBinding
 import com.lishide.mvvm.api.error.ErrorResult
 import com.lishide.mvvm.event.EventBusManager
 import com.lishide.mvvm.ext.toast
-import com.lishide.mvvm.ui.dialog.LoadingDialog
 import com.lishide.mvvm.util.GenericParadigmUtils
 import com.lishide.mvvm.util.Logg
 
@@ -21,8 +20,6 @@ abstract class BaseFragment<VM : BaseViewModel<VB>, VB : ViewBinding> : Fragment
     var contentView: View? = null
     lateinit var vm: VM
     lateinit var vb: VB
-
-    private val mLoading: LoadingDialog by lazy { LoadingDialog(mContext) }
 
     //Fragment的View加载完毕的标记
     private var isViewCreated = false
@@ -132,14 +129,6 @@ abstract class BaseFragment<VM : BaseViewModel<VB>, VB : ViewBinding> : Fragment
 
     //需要懒加载的数据，重写此方法
     abstract fun lazyLoadData()
-
-    override fun showLoading() {
-        mLoading.showLoading()
-    }
-
-    override fun dismissLoading() {
-        mLoading.dismiss()
-    }
 
     override fun showMessage(message: String?) {
         mContext.toast(message)

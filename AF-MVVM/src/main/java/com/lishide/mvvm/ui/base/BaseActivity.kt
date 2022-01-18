@@ -11,7 +11,6 @@ import androidx.viewbinding.ViewBinding
 import com.lishide.mvvm.api.error.ErrorResult
 import com.lishide.mvvm.event.EventBusManager
 import com.lishide.mvvm.ext.toast
-import com.lishide.mvvm.ui.dialog.LoadingDialog
 import com.lishide.mvvm.util.GenericParadigmUtils
 import com.lishide.mvvm.util.Logg
 
@@ -20,8 +19,6 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
     lateinit var mContext: FragmentActivity
     lateinit var vm: VM
     lateinit var vb: VB
-
-    private val mLoading: LoadingDialog by lazy { LoadingDialog(mContext) }
 
     @Suppress("UNCHECKED_CAST")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,14 +92,6 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
             if (it.show) showMessage(it.errMsg)
             errorResult(it)
         })
-    }
-
-    override fun showLoading() {
-        mLoading.showLoading()
-    }
-
-    override fun dismissLoading() {
-        mLoading.dismiss()
     }
 
     override fun showMessage(message: String?) {

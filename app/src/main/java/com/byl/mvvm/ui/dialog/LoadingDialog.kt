@@ -1,11 +1,11 @@
-package com.lishide.mvvm.ui.dialog
+package com.byl.mvvm.ui.dialog
 
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
-import com.lishide.mvvm.R
+import com.byl.mvvm.R
 import com.wang.avi.AVLoadingIndicatorView
 
 /**
