@@ -10,13 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.lishide.mvvm.api.error.ErrorResult
 import com.lishide.mvvm.event.EventBusManager
-import com.lishide.mvvm.event.EventCode
-import com.lishide.mvvm.event.EventMessage
 import com.lishide.mvvm.ext.toast
 import com.lishide.mvvm.ui.dialog.LoadingDialog
 import com.lishide.mvvm.util.GenericParadigmUtils
 import com.lishide.mvvm.util.Logg
-import org.greenrobot.eventbus.Subscribe
 
 abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompatActivity(), IView {
 
@@ -72,14 +69,6 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
         EventBusManager.unregister(this)
     }
 
-    /**
-     * 事件传递
-     */
-    @Subscribe
-    fun onEventMainThread(msg: EventMessage) {
-        handleEvent(msg)
-    }
-
     open fun getClassName(): String {
         val className = "BaseActivity"
         try {
@@ -127,15 +116,6 @@ abstract class BaseActivity<VM : BaseViewModel<VB>, VB : ViewBinding> : AppCompa
     override fun onStop() {
         super.onStop()
         dismissLoading()
-    }
-
-    /**
-     * 消息、事件接收回调
-     */
-    open fun handleEvent(msg: EventMessage) {
-        if (msg.code == EventCode.LOGIN_OUT) {
-            finish()
-        }
     }
 
     /**

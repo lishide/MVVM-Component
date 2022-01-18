@@ -1,4 +1,4 @@
-package com.lishide.mvvm.event
+package com.byl.mvvm.event
 
 /**
  * 事件类型

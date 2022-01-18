@@ -1,4 +1,4 @@
-package com.lishide.mvvm.event
+package com.byl.mvvm.event
 
 class EventMessage @JvmOverloads constructor(
     var code: EventCode,

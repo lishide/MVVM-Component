@@ -3,14 +3,14 @@ package com.byl.mvvm.ui.main
 import android.content.Intent
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.byl.mvvm.databinding.ActivityMainBinding
-import com.lishide.mvvm.event.EventCode
-import com.lishide.mvvm.event.EventMessage
-import com.lishide.mvvm.ui.base.BaseActivity
+import com.byl.mvvm.event.EventCode
+import com.byl.mvvm.event.EventMessage
+import com.byl.mvvm.ui.base.BaseAppActivity
 import com.byl.mvvm.ui.main.adapter.ArticleListAdapter
 import com.byl.mvvm.ui.main.model.ArticleBean
 import com.byl.mvvm.ui.main.vm.MainActivityViewModel
 
-class MainActivity : BaseActivity<MainActivityViewModel, ActivityMainBinding>() {
+class MainActivity : BaseAppActivity<MainActivityViewModel, ActivityMainBinding>() {
 
     var adapter: ArticleListAdapter? = null
     var list: ArrayList<ArticleBean>? = null

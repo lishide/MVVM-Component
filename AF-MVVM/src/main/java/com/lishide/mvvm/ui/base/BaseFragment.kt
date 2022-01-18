@@ -10,12 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.lishide.mvvm.api.error.ErrorResult
 import com.lishide.mvvm.event.EventBusManager
-import com.lishide.mvvm.event.EventMessage
 import com.lishide.mvvm.ext.toast
 import com.lishide.mvvm.ui.dialog.LoadingDialog
 import com.lishide.mvvm.util.GenericParadigmUtils
 import com.lishide.mvvm.util.Logg
-import org.greenrobot.eventbus.Subscribe
 
 abstract class BaseFragment<VM : BaseViewModel<VB>, VB : ViewBinding> : Fragment(), IView {
 
@@ -95,14 +93,6 @@ abstract class BaseFragment<VM : BaseViewModel<VB>, VB : ViewBinding> : Fragment
         EventBusManager.unregister(this)
     }
 
-    /**
-     * 事件传递
-     */
-    @Subscribe
-    fun onEventMainThread(msg: EventMessage) {
-        handleEvent(msg)
-    }
-
     open fun getClassName(): String {
         val className = "BaseFragment"
         try {
@@ -154,11 +144,6 @@ abstract class BaseFragment<VM : BaseViewModel<VB>, VB : ViewBinding> : Fragment
     override fun showMessage(message: String?) {
         mContext.toast(message)
     }
-
-    /**
-     * 消息、事件接收回调
-     */
-    open fun handleEvent(msg: EventMessage) {}
 
     /**
      * 接口请求错误回调

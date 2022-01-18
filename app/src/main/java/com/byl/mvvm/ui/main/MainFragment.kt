@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.byl.mvvm.databinding.FragmentMainBinding
-import com.lishide.mvvm.ui.base.BaseFragment
+import com.byl.mvvm.ui.base.BaseAppFragment
 import com.byl.mvvm.ui.main.adapter.ArticleListAdapter
 import com.byl.mvvm.ui.main.model.ArticleBean
 import com.byl.mvvm.ui.main.vm.MainFragmentViewModel
 
-class MainFragment : BaseFragment<MainFragmentViewModel, FragmentMainBinding>() {
+class MainFragment : BaseAppFragment<MainFragmentViewModel, FragmentMainBinding>() {
 
     var id: Int? = 0
     var adapter: ArticleListAdapter? = null

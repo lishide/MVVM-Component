@@ -7,8 +7,8 @@ import android.os.Build
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.byl.mvvm.databinding.ActivitySplashBinding
+import com.byl.mvvm.ui.base.BaseAppActivity
 import com.byl.mvvm.ui.main.MainActivity
-import com.lishide.mvvm.ui.base.BaseActivity
 import com.lishide.mvvm.ui.base.BaseViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 import org.jetbrains.anko.startActivity
 
 
-class SplashActivity : BaseActivity<BaseViewModel<ActivitySplashBinding>, ActivitySplashBinding>() {
+class SplashActivity : BaseAppActivity<BaseViewModel<ActivitySplashBinding>, ActivitySplashBinding>() {
 
 
     override fun initView() {
